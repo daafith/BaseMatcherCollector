@@ -10,7 +10,7 @@ A customisable [matcher](https://github.com/hamcrest) library.
     //						  but: was "bar"
 ```
 ### Custom BaseMatcher
-The BaseMatcher can be customised so that your matchers fit your DSL and it helps you define failure output once per BaseMatcher.
+The BaseMatcher can be customised so that your matchers fit your context and it helps you define failure output once per BaseMatcher.
 ```java
 	public class FooMatcher {
 	
