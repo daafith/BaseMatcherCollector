@@ -12,7 +12,7 @@ import custombasematchers.SpeedCameraMatchers;
 
 /**
  * 
- * @author David Baak, Copyright <br />
+ * @author David Baak, Copyright 2015 <br />
  * This BaseMatcherCollector enables you to chain custom {@link BaseMatcher} of type <T> with {@code all} and {@code and}.<br />
  * An example of a custom {@link BaseMatcher} is: {@link SpeedCameraMatchers}<br />
  * An example of chaining in Junit is: {@link AssertionChainingJUnitTest}<br />

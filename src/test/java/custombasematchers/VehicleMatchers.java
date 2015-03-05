@@ -33,7 +33,7 @@ public class VehicleMatchers {
 		      }
 		      
 		      public void describeMismatchSafely(final Vehicle vehicle, final Description mismatchDescription) {
-		    	  mismatchDescription.appendText(" but it is ").appendValue(vehicle.getBrand());
+		    	  mismatchDescription.appendText(" it is ").appendValue(vehicle.getBrand());
 			  }
 		      
 		      public boolean matchesSafely(final Vehicle vehicle) {
