@@ -10,7 +10,7 @@ A customisable [matcher](https://github.com/hamcrest) library.
     //						  but: was "bar"
 ```
 ### Custom BaseMatcher
-The BaseMatcher can be used to modify our matchers to fit our DSL and to define  our failure output once.
+The BaseMatcher can be customised so that your matchers fit your DSL and it helps you define failure output once per BaseMatcher.
 ```java
 	public class FooMatcher {
 	
@@ -51,3 +51,4 @@ The collector returns the results **after** all matchers have been executed.
 		//Expected: I wanted hasFooBar to return <true> AND Foo should have been "foo" AND hasFoo should return <42>
 		//	   but: || I wanted hasFooBar to return <true> BUT returned <false> || Foo should have been "foo" BUT instead it was "bar" || hasFoo should return <42> BUT it returned <14>
 ```
+Of course you can tailor the output if you so desire. Then edit `describeTo` and/or `describeMismatch`.
