@@ -32,7 +32,7 @@ public class AssertionChainingTestNgTest {
 	}
 	
 	public void oneRingToRuleThemAll() {
-		expectedInList.add(53);
+		expectedInList.add(49);
 		vehicle.passSpeedCamera(53);
 		assertThat(speedCamera, all(
 						hasMeasuredSpeed(53))

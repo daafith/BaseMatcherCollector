@@ -44,8 +44,8 @@ public class SpeedCorrectionTest {
 	
 	@Test
 	public void checkListOfCorrectedSpeeds() {
-		expectedInList.add(53);
-		expectedInList.add(83);
+		expectedInList.add(49);
+		expectedInList.add(79);
 		vehicle
 			.passSpeedCamera(53)
 			.passSpeedCamera(100)
