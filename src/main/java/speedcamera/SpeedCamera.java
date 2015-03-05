@@ -55,7 +55,6 @@ public class SpeedCamera implements Observer {
 	
 	private void setCorrectedSpeed() {
 		correctedSpeed = measuredSpeed;
-		addCorrectedSpeedToList(correctedSpeed);
 		if (correctedSpeed >=30) {
 			if (correctedSpeed <= 50) {
 				correctedSpeed -= 3;
@@ -65,6 +64,7 @@ public class SpeedCamera implements Observer {
 				correctedSpeed -= 5;
 			}
 		}
+		addCorrectedSpeedToList(correctedSpeed);
 	}
 	
 	private void addCorrectedSpeedToList(int correctedSpeed) {
