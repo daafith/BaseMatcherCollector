@@ -87,7 +87,7 @@ public class SpeedCameraMatchers {
 		      }
 		      
 		      public void describeMismatchSafely(final SpeedCamera item, final Description mismatchDescription) {
-		         mismatchDescription.appendText(" returned ").appendValue(item.isPictureTaken());
+		         mismatchDescription.appendText(" returned ").appendValue(item.isLicenseRevoked());
 		      }
 
 		      public boolean matchesSafely(final SpeedCamera camera) {
