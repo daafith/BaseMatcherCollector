@@ -27,7 +27,7 @@ public class AssertionChainingJUnitTest {
 	
 	@Before
 	public void setUp() {
-		vehicle = new Vehicle().setBrand("BMW").setSpeed(0);
+		vehicle = new Vehicle().setSpeed(0);
 		speedCamera = new SpeedCamera();
 		vehicle.addObserver(speedCamera);
 	}
@@ -36,10 +36,6 @@ public class AssertionChainingJUnitTest {
 	public void oneRingToRuleThemAll() {
 		expectedInList.add(53);
 		vehicle.passSpeedCamera(53);
-		
-		assertThat(vehicle, all(
-						hasCurrentSpeed(53))
-						.and(hasBrand("BMW")));
 		assertThat(speedCamera, all(
 						hasMeasuredSpeed(53))
 						.and(hasCorrectedSpeedTo(49))

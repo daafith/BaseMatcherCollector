@@ -23,7 +23,7 @@ public class LicenseRevokedTest {
 	
 	@Before
 	public void setUp() {
-		vehicle = new Vehicle().setBrand("Volvo").setSpeed(0);
+		vehicle = new Vehicle().setSpeed(0);
 		speedCamera = new SpeedCamera();
 		vehicle.addObserver(speedCamera);
 	}

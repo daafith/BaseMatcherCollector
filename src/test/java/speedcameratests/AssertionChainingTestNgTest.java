@@ -1,8 +1,11 @@
 package speedcameratests;
 
 import static collector.BaseMatcherCollector.all;
-import static custombasematchers.SpeedCameraMatchers.*;
-import static custombasematchers.VehicleMatchers.*;
+import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedTo;
+import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedsInList;
+import static custombasematchers.SpeedCameraMatchers.hasMeasuredSpeed;
+import static custombasematchers.SpeedCameraMatchers.hasRevokedLicense;
+import static custombasematchers.SpeedCameraMatchers.hasTakenAPicture;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
@@ -23,7 +26,7 @@ public class AssertionChainingTestNgTest {
 	
 	@BeforeMethod
 	public void setUp() {
-		vehicle = new Vehicle().setBrand("BMW").setSpeed(0);
+		vehicle = new Vehicle().setSpeed(0);
 		speedCamera = new SpeedCamera();
 		vehicle.addObserver(speedCamera);
 	}
@@ -31,10 +34,6 @@ public class AssertionChainingTestNgTest {
 	public void oneRingToRuleThemAll() {
 		expectedInList.add(53);
 		vehicle.passSpeedCamera(53);
-		
-		assertThat(vehicle, all(
-						hasCurrentSpeed(53))
-						.and(hasBrand("BMW")));
 		assertThat(speedCamera, all(
 						hasMeasuredSpeed(53))
 						.and(hasCorrectedSpeedTo(49))

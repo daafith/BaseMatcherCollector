@@ -40,13 +40,13 @@ The assertThat now looks like this.
 		//					 	  but:  instead it was "bar"
 ```
 ### BaseMatcherCollector
-This [class](https://github.com/daafith/BaseMatcherCollector/blob/master/src/test/java/collector/BaseMatcherCollector.java) enables us to chain matchers.
+This [class](https://github.com/daafith/BaseMatcherCollector/blob/master/src/test/java/collector/BaseMatcherCollector.java) enables us to chain matchers for BaseMatcher<T>.
 ```java
 	assertThat(foo, all(
-				hasFoobar(true))
+				hasFooBar(true))
 				.and(hasBar("foo"))
 				.and(hasFoo(42)));
 		// Output on failure:
-		//Expected: Taking a picture should have returned <true> AND Revoking licensed should have returned <true> AND The camera should have corrected the speed to <0>
-		//but:  Taking a picture should have returned <true> BUT  returned <false> Revoking licensed should have returned <true> BUT  returned <false> The camera should have corrected the speed to <0> BUT  alas, the camera corrected it to <49>
+		//Expected: I wanted hasFooBar to return <true> AND Foo should have been "foo" AND hasFoo should return <42>
+		//	   but: || I wanted hasFooBar to return <true> BUT returned <false> || Foo should have been "foo" BUT instead it was "bar" || hasFoo should return <42> BUT it returned <14>
 ```
