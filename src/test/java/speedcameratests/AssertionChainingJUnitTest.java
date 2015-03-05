@@ -1,13 +1,11 @@
 package speedcameratests;
 
 import static collector.BaseMatcherCollector.all;
-import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedsInList;
 import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedTo;
+import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedsInList;
 import static custombasematchers.SpeedCameraMatchers.hasMeasuredSpeed;
 import static custombasematchers.SpeedCameraMatchers.hasRevokedLicense;
 import static custombasematchers.SpeedCameraMatchers.hasTakenAPicture;
-import static custombasematchers.VehicleMatchers.hasBrand;
-import static custombasematchers.VehicleMatchers.hasCurrentSpeed;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
