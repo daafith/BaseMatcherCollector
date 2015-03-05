@@ -83,7 +83,7 @@ public class SpeedCameraMatchers {
 		return new TypeSafeMatcher<SpeedCamera>() {
 		      
 		      public void describeTo(final Description description) {
-		         description.appendText("Revoking licensed should have returned ").appendValue(hasRevokedLicense);
+		         description.appendText("Revoking license should have returned ").appendValue(hasRevokedLicense);
 		      }
 		      
 		      public void describeMismatchSafely(final SpeedCamera item, final Description mismatchDescription) {
