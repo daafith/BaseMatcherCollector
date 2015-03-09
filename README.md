@@ -1,5 +1,5 @@
 # BaseMatcherCollector
-A generic solution for safe assertion-chaining in Hamrest.
+A generic solution for safe assertion-chaining in Hamcrest.
 ### Hamcrest
 A customisable [matcher](https://github.com/hamcrest) library.
 ```java
@@ -40,8 +40,8 @@ The assertThat now looks like this.
 		//					 	  but:  instead it was "bar"
 ```
 ### BaseMatcherCollector
-This [class](https://github.com/daafith/BaseMatcherCollector/blob/master/src/test/java/collector/BaseMatcherCollector.java) enables us to safely chain matchers for BaseMatcher<T>. 
-The collector returns the results **after** all matchers have been executed.
+This [class](https://github.com/daafith/BaseMatcherCollector/blob/master/src/test/java/collector/BaseMatcherCollector.java) enables us to safely chain our BaseMatchers of type <T>. 
+The collector returns the results **after all** matchers have been executed.
 ```java
 	assertThat(foo, all(
 				hasFooBar(true))
