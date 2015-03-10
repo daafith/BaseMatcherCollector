@@ -1,6 +1,6 @@
 package speedcameratests;
 
-import static collector.BaseMatcherCollector.all;
+import static collector.BaseMatcherCollector.chain;
 import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedTo;
 import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedsInList;
 import static custombasematchers.SpeedCameraMatchers.hasMeasuredSpeed;
@@ -34,7 +34,7 @@ public class AssertionChainingTestNgTest {
 	public void oneRingToRuleThemAll() {
 		expectedInList.add(49);
 		vehicle.passSpeedCamera(53);
-		assertThat(speedCamera, all(
+		assertThat(speedCamera, chain(
 						hasMeasuredSpeed(53))
 						.and(hasCorrectedSpeedTo(49))
 						.and(hasCorrectedSpeedsInList(expectedInList))
@@ -44,7 +44,7 @@ public class AssertionChainingTestNgTest {
 
 	public void onlyTheFirstOneShallFail() {
 		vehicle.passSpeedCamera(53);
-		assertThat(speedCamera, all(
+		assertThat(speedCamera, chain(
 						hasTakenAPicture(true))
 						.and(hasRevokedLicense(false))
 						.and(hasCorrectedSpeedTo(49)));
@@ -52,7 +52,7 @@ public class AssertionChainingTestNgTest {
 	
 	public void onlyTheFirstTwoShallFail() {
 		vehicle.passSpeedCamera(53);
-		assertThat(speedCamera, all(
+		assertThat(speedCamera, chain(
 						hasTakenAPicture(true))
 						.and(hasRevokedLicense(true))
 						.and(hasCorrectedSpeedTo(49)));
@@ -60,7 +60,7 @@ public class AssertionChainingTestNgTest {
 
 	public void noneShallPass() {
 		vehicle.passSpeedCamera(53);
-		assertThat(speedCamera, all(
+		assertThat(speedCamera, chain(
 						hasTakenAPicture(true))
 						.and(hasRevokedLicense(true))
 						.and(hasCorrectedSpeedTo(0)));

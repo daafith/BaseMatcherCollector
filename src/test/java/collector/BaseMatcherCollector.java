@@ -54,7 +54,7 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 		return this;
 	}
 	
-	public static <T> BaseMatcherCollector<T> all(final BaseMatcher<? super T> matcher) {
+	public static <T> BaseMatcherCollector<T> chain(final BaseMatcher<? super T> matcher) {
 	      return new BaseMatcherCollector<T>(matcher);
 	}
 

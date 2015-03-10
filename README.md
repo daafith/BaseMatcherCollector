@@ -43,7 +43,7 @@ The assertThat now looks like this.
 This [class](https://github.com/daafith/BaseMatcherCollector/blob/master/src/test/java/collector/BaseMatcherCollector.java) enables us to safely chain our BaseMatchers of type <T>. 
 The collector returns the results **after all** matchers have been executed.
 ```java
-	assertThat(foo, all(
+	assertThat(foo, chain(
 				hasFooBar(true))
 				.and(hasBar("foo"))
 				.and(hasFoo(42)));
