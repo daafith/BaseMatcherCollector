@@ -21,15 +21,15 @@ import custombasematchers.SpeedCameraMatchers;
  */
 public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 	
-	private List<BaseMatcher<? super T>> matchers = new ArrayList<BaseMatcher<? super T>>();
-	private List<BaseMatcher<? super T>> mismatches = new ArrayList<BaseMatcher<? super T>>();
+	private List<BaseMatcher<T>> matchers = new ArrayList<BaseMatcher<T>>();
+	private List<BaseMatcher<T>> mismatches = new ArrayList<BaseMatcher<T>>();
 	
-	private BaseMatcherCollector(final BaseMatcher<? super T> matcher) {
+	private BaseMatcherCollector(final BaseMatcher<T> matcher) {
 		matchers.add(matcher);
 	}
 
 	public boolean matches(Object itemToMatch) {
-		for (final BaseMatcher<? super T> matcher : matchers) {
+		for (final BaseMatcher<T> matcher : matchers) {
 			if (!matcher.matches(itemToMatch)) {
 				mismatches.add(matcher);  
 			}
@@ -43,7 +43,7 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 	}
 	
 	public void describeMismatch(final Object item, final Description description) {
-		for (final BaseMatcher<? super T> mismatch : mismatches) {
+		for (final BaseMatcher<T> mismatch : mismatches) {
 			description.appendText("\n").appendDescriptionOf(mismatch).appendText(" BUT ");
 			mismatch.describeMismatch(item, description);
 		}
@@ -54,7 +54,7 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 	 * @param matcher
 	 * @return the existing instance of BaseMatcherCollector
 	 */
-	public BaseMatcherCollector<T> and(final BaseMatcher<? super T> matcher) {
+	public BaseMatcherCollector<T> and(final BaseMatcher<T> matcher) {
 		matchers.add(matcher);
 		return this;
 	}
@@ -64,7 +64,7 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 	 * @param matcher
 	 * @return an instance of BaseMatcherCollector Type {@code<T>} <br />
 	 */
-	public static <T> BaseMatcherCollector<T> chain(final BaseMatcher<? super T> matcher) {
+	public static <T> BaseMatcherCollector<T> chain(final BaseMatcher<T> matcher) {
 	      return new BaseMatcherCollector<T>(matcher);
 	}
 

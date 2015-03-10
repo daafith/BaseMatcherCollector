@@ -6,6 +6,7 @@ import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedsInList;
 import static custombasematchers.SpeedCameraMatchers.hasMeasuredSpeed;
 import static custombasematchers.SpeedCameraMatchers.hasRevokedLicense;
 import static custombasematchers.SpeedCameraMatchers.hasTakenAPicture;
+import static custombasematchers.VehicleMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
@@ -68,6 +69,17 @@ public class AssertionChainingJUnitTest {
 						hasTakenAPicture(true))
 						.and(hasRevokedLicense(true))
 						.and(hasCorrectedSpeedTo(0)));
+	}
+	
+	
+	@Test
+	public void vehicleExample() {
+		vehicle.setBrand("Lotus");
+		vehicle.passSpeedCamera(53);
+		assertThat(vehicle, chain(
+						hasBrand("Lexus"))
+						.and(hasCurrentSpeed(199)));
+						
 	}
 	
 }
