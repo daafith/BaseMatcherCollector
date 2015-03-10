@@ -38,12 +38,13 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 	}
 
 	public void describeTo(Description description) {
-	      description.appendList("", " " + "AND" + " ", "", matchers);
+	      description.appendList("\n", "\n" + "AND" + " ", "", matchers);
+
 	}
 	
 	public void describeMismatch(final Object item, final Description description) {
 		for (final BaseMatcher<? super T> mismatch : mismatches) {
-			description.appendText(" || ").appendDescriptionOf(mismatch).appendText(" BUT ");
+			description.appendText("\n").appendDescriptionOf(mismatch).appendText(" BUT ");
 			mismatch.describeMismatch(item, description);
 		}
 	}
