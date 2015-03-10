@@ -7,7 +7,7 @@ import static custombasematchers.SpeedCameraMatchers.hasMeasuredSpeed;
 import static custombasematchers.SpeedCameraMatchers.hasRevokedLicense;
 import static custombasematchers.SpeedCameraMatchers.hasTakenAPicture;
 import static custombasematchers.VehicleMatchers.*;
-import static custombasematchers.SomeObjectAsParentOfCameraMatcher.*;
+import static custombasematchers.MeasuringDeviceMatcher.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class AssertionChainingJUnitTest {
 						.and(hasCorrectedSpeedsInList(expectedInList))
 						.and(hasTakenAPicture(false))
 						.and(hasRevokedLicense(false))
-						.and(hasFoo("Foo")));
+						.and(isMeasuringDeviceTypeNamed("speedcamera.SpeedCamera")));
 	}
 	
 	

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-public class SpeedCamera extends SomeObjectAsParentOfCamera implements Observer {
+public class SpeedCamera extends MeasuringDevice implements Observer {
 
 	private int measuredSpeed;
 	private int correctedSpeed;
@@ -18,6 +18,7 @@ public class SpeedCamera extends SomeObjectAsParentOfCamera implements Observer 
 	public SpeedCamera() {
 		correctedSpeed = 0;
 		measuredSpeed = 0;
+		setDeviceType(this.getClass().getName());
 	}
 	
 	public int getMeasuredSpeed() {

@@ -1,6 +1,7 @@
 package speedcameratests;
 
 import static collector.BaseMatcherCollector.chain;
+import static custombasematchers.MeasuringDeviceMatcher.isMeasuringDeviceTypeNamed;
 import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedTo;
 import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedsInList;
 import static custombasematchers.SpeedCameraMatchers.hasMeasuredSpeed;
@@ -41,7 +42,9 @@ public class AssertionChainingTestNgTest {
 						.and(hasCorrectedSpeedTo(49))
 						.and(hasCorrectedSpeedsInList(expectedInList))
 						.and(hasTakenAPicture(false))
-						.and(hasRevokedLicense(false)));
+						.and(hasRevokedLicense(false))
+						.and(isMeasuringDeviceTypeNamed("speedcamera.SpeedCamera")));
+
 	}
 
 	public void onlyTheFirstOneShallFail() {
