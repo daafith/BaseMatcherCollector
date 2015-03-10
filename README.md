@@ -1,5 +1,5 @@
 # BaseMatcherCollector
-A generic solution for safe assertion-chaining in Hamcrest.
+A generic solution for safe assertion chaining in Hamcrest.
 ### Hamcrest
 A customisable [matcher](https://github.com/hamcrest) library.
 ```java
