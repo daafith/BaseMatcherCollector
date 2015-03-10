@@ -49,11 +49,21 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 		}
 	}
 	
+	/**
+	 * Adds your nth assertion to the chain.
+	 * @param matcher
+	 * @return the existing instance of BaseMatcherCollector
+	 */
 	public BaseMatcherCollector<T> and(final BaseMatcher<? super T> matcher) {
 		matchers.add(matcher);
 		return this;
 	}
 	
+	/**
+	 * Initiates your assertion chain.
+	 * @param matcher
+	 * @return an instance of BaseMatcherCollector Type {@code<T>} <br />
+	 */
 	public static <T> BaseMatcherCollector<T> chain(final BaseMatcher<? super T> matcher) {
 	      return new BaseMatcherCollector<T>(matcher);
 	}
