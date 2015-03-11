@@ -13,7 +13,7 @@ public class MeasuringDevice {
 		return type;
 	}
 	
-	protected void setDeviceType(String type) {
-		this.type = type;
+	protected void setDeviceType(Class<? extends MeasuringDevice> clazz) {
+		type = clazz.getSimpleName();
 	}
 }

@@ -43,7 +43,7 @@ public class AssertionChainingTestNgTest {
 						.and(hasCorrectedSpeedsInList(expectedInList))
 						.and(hasTakenAPicture(false))
 						.and(hasRevokedLicense(false))
-						.and(isMeasuringDeviceTypeNamed("speedcamera.SpeedCamera")));
+						.and(isMeasuringDeviceTypeNamed("SpeedCamera")));
 
 	}
 

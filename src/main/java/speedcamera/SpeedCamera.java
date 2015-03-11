@@ -18,7 +18,7 @@ public class SpeedCamera extends MeasuringDevice implements Observer {
 	public SpeedCamera() {
 		correctedSpeed = 0;
 		measuredSpeed = 0;
-		setDeviceType(this.getClass().getName());
+		setDeviceType(this.getClass());
 	}
 	
 	public int getMeasuredSpeed() {
