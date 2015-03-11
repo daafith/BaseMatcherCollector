@@ -11,7 +11,7 @@ import speedcamera.Vehicle;
 
 /**
  * @author davidbaak<br />
- * The purpose of this is test is to show you a custom approach with Hamcrest.<br />
+ * The purpose of this is test is to show you what a test with a custom BaseMatcher looks like.<br />
  * Specs of Camera's picture trigger are:<br />
  * <b>when</b> correctedSpeed >= 51 <b>then</b> camera should take picture<br />
  */

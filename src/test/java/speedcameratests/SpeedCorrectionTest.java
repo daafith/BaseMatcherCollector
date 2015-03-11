@@ -14,7 +14,7 @@ import speedcamera.Vehicle;
 
 /**
  * @author davidbaak<br />
- * The purpose of this is test is to show you a custom approach with Hamcrest.<br />
+ * The purpose of this is test is to show you what a test with a custom BaseMatcher looks like.<br />
  * Specs of Camera's speed correction are:<br />
  * <ul>
  * <li>30 >= (correction=3) <= 50</li>

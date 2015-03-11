@@ -11,7 +11,7 @@ import speedcamera.Vehicle;
 
 /**
  * @author davidbaak<br />
- * The purpose of this is test is to show you what a custom BaseMatcher looks like.<br />
+ * The purpose of this is test is to show you what a test with a custom BaseMatcher looks like.<br />
  * Specs of Camera's speed correction are:<br />
  * <b>when</b> correctedSpeed >= speedLimit+50 <b>then/<b> license should be revoked<br />
  */
