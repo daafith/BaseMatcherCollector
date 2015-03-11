@@ -44,7 +44,8 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 	
 	public void describeMismatch(final Object item, final Description description) {
 		for (final BaseMatcher<? super T> mismatch : mismatches) {
-			description.appendText("\n").appendDescriptionOf(mismatch).appendText(" BUT ");
+			description.appendText("\n")
+					   .appendDescriptionOf(mismatch).appendText(" BUT ");
 			mismatch.describeMismatch(item, description);
 		}
 	}
