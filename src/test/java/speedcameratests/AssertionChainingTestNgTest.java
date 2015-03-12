@@ -44,7 +44,6 @@ public class AssertionChainingTestNgTest {
 						.and(hasTakenAPicture(false))
 						.and(hasRevokedLicense(false))
 						.and(isMeasuringDeviceTypeNamed("SpeedCamera")));
-
 	}
 
 	public void onlyTheFirstOneShallFail() {
