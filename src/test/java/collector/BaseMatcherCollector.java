@@ -39,7 +39,6 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 
 	public void describeTo(Description description) {
 	      description.appendList("\n", "\n" + "AND" + " ", "", matchers);
-
 	}
 	
 	public void describeMismatch(final Object item, final Description description) {

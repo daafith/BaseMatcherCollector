@@ -19,6 +19,9 @@ import org.junit.Test;
 import speedcamera.SpeedCamera;
 import speedcamera.Vehicle;
 
+/**
+ * These are a few examples of safe assertion chaining in JUnit
+ */
 public class AssertionChainingJUnitTest {
 	
 	private Vehicle vehicle;
@@ -44,7 +47,6 @@ public class AssertionChainingJUnitTest {
 						.and(hasRevokedLicense(false))
 						.and(isMeasuringDeviceTypeNamed("SpeedCamera")));
 	}
-	
 	
 	@Test
 	public void onlyTheFirstOneShallFail() {
@@ -73,7 +75,6 @@ public class AssertionChainingJUnitTest {
 						.and(hasCorrectedSpeedTo(0)));
 	}
 	
-	
 	@Test
 	public void vehicleExample() {
 		vehicle.setBrand("Lotus");
@@ -83,5 +84,4 @@ public class AssertionChainingJUnitTest {
 						.and(hasCurrentSpeed(199)));
 						
 	}
-	
 }

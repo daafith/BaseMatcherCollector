@@ -20,6 +20,9 @@ import org.testng.annotations.Test;
 import speedcamera.SpeedCamera;
 import speedcamera.Vehicle;
 
+/**
+ * These are a few examples of safe assertion chaining in TestNG
+ */
 @Test
 public class AssertionChainingTestNgTest {
 	
@@ -76,6 +79,5 @@ public class AssertionChainingTestNgTest {
 		assertThat(vehicle, chain(
 						hasBrand("Lexus"))
 						.and(hasCurrentSpeed(199)));
-	}
-	
+	}	
 }
