@@ -12,11 +12,13 @@ public class VehicleMatchers {
 		return new TypeSafeMatcher<Vehicle>() {
 		      
 		      public void describeTo(final Description description) {
-		    	  description.appendText("The vehicle's current speed should be ").appendValue(vehicleSpeed);
+		    	  description.appendText("The vehicle's current speed should be ")
+		    	  			 .appendValue(vehicleSpeed);
 		      }
 		      
 		      public void describeMismatchSafely(final Vehicle vehicle, final Description mismatchDescription) {
-		    	  mismatchDescription.appendText(" it claims to have a speed of ").appendValue(vehicle.getSpeed());
+		    	  mismatchDescription.appendText(" it claims to have a speed of ")
+		    	  					 .appendValue(vehicle.getSpeed());
 			  }
 		      
 		      public boolean matchesSafely(final Vehicle vehicle) {
@@ -29,11 +31,13 @@ public class VehicleMatchers {
 		return new TypeSafeMatcher<Vehicle>() {
 		      
 		      public void describeTo(final Description description) {
-		    	  description.appendText("The vehicle's brand should be ").appendValue(vehicleBrand);
+		    	  description.appendText("The vehicle's brand should be ")
+		    	  			 .appendValue(vehicleBrand);
 		      }
 		      
 		      public void describeMismatchSafely(final Vehicle vehicle, final Description mismatchDescription) {
-		    	  mismatchDescription.appendText(" it is ").appendValue(vehicle.getBrand());
+		    	  mismatchDescription.appendText(" it is ")
+		    	  					 .appendValue(vehicle.getBrand());
 			  }
 		      
 		      public boolean matchesSafely(final Vehicle vehicle) {

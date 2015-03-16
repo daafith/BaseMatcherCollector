@@ -14,11 +14,13 @@ public class SpeedCameraMatchers {
 		return new TypeSafeMatcher<SpeedCamera>() {
 		      
 			public void describeTo(final Description description) {
-				description.appendText("The camera should have corrected the speed to ").appendValue(measuredSpeed);
+				description.appendText("The camera should have corrected the speed to ")
+						   .appendValue(measuredSpeed);
 		    }
 		      
 		    public void describeMismatchSafely(final SpeedCamera camera, final Description mismatchDescription) {
-		    	mismatchDescription.appendText(" alas, the camera corrected it to ").appendValue(camera.getMeasuredSpeed());
+		    	mismatchDescription.appendText(" alas, the camera corrected it to ")
+		    					   .appendValue(camera.getMeasuredSpeed());
 			}
 		      
 		    public boolean matchesSafely(final SpeedCamera camera) {
@@ -31,11 +33,13 @@ public class SpeedCameraMatchers {
 		return new TypeSafeMatcher<SpeedCamera>() {
 		      
 		      public void describeTo(final Description description) {
-		    	  description.appendText("The camera should have corrected the speed to ").appendValue(correctedSpeed);
+		    	  description.appendText("The camera should have corrected the speed to ")
+		    	  			 .appendValue(correctedSpeed);
 		      }
 		      
 		      public void describeMismatchSafely(final SpeedCamera camera, final Description mismatchDescription) {
-		    	  mismatchDescription.appendText(" alas, the camera corrected it to ").appendValue(camera.getCorrectedSpeed());
+		    	  mismatchDescription.appendText(" alas, the camera corrected it to ")
+		    	  					 .appendValue(camera.getCorrectedSpeed());
 			  }
 		      
 		      public boolean matchesSafely(final SpeedCamera camera) {
@@ -48,11 +52,13 @@ public class SpeedCameraMatchers {
 		return new TypeSafeMatcher<SpeedCamera>() {
 		      
 		      public void describeTo(final Description description) {
-		    	  description.appendText("The camera should have these values in its list of corrected speeds").appendValue(correctedSpeeds);
+		    	  description.appendText("The camera should have these values in its list of corrected speeds")
+		    	  			 .appendValue(correctedSpeeds);
 		      }
 		      
 		      public void describeMismatchSafely(final SpeedCamera camera, final Description mismatchDescription) {
-		    	  mismatchDescription.appendText(" these values are in the list ").appendValue(camera.getAllCorrectedSpeeds());
+		    	  mismatchDescription.appendText(" these values are in the list ")
+		    	  					 .appendValue(camera.getAllCorrectedSpeeds());
 			  }
 		      
 		      public boolean matchesSafely(final SpeedCamera camera) {
@@ -65,11 +71,13 @@ public class SpeedCameraMatchers {
 		return new TypeSafeMatcher<SpeedCamera>() {
 		      
 		      public void describeTo(final Description description) {
-		         description.appendText("Taking a picture should have returned ").appendValue(hasTakenPicture);
+		         description.appendText("Taking a picture should have returned ")
+		         			.appendValue(hasTakenPicture);
 		      }
 		      
-		      public void describeMismatchSafely(final SpeedCamera item, final Description mismatchDescription) {
-		         mismatchDescription.appendText(" returned ").appendValue(item.isPictureTaken());
+		      public void describeMismatchSafely(final SpeedCamera camera, final Description mismatchDescription) {
+		         mismatchDescription.appendText(" returned ")
+		         					.appendValue(camera.isPictureTaken());
 		      }
 
 		      public boolean matchesSafely(final SpeedCamera camera) {
@@ -86,8 +94,8 @@ public class SpeedCameraMatchers {
 		         description.appendText("Revoking license should have returned ").appendValue(hasRevokedLicense);
 		      }
 		      
-		      public void describeMismatchSafely(final SpeedCamera item, final Description mismatchDescription) {
-		         mismatchDescription.appendText(" returned ").appendValue(item.isLicenseRevoked());
+		      public void describeMismatchSafely(final SpeedCamera camera, final Description mismatchDescription) {
+		         mismatchDescription.appendText(" returned ").appendValue(camera.isLicenseRevoked());
 		      }
 
 		      public boolean matchesSafely(final SpeedCamera camera) {
