@@ -18,20 +18,14 @@ import custombasematchers.SpeedCameraMatchers;
  */
 public final class CopyOfBaseMatcherCollector<T> extends BaseMatcher<T> {
 	
-	private PVector<BaseMatcher<? super T>> matchers = TreePVector.empty();
-	private PVector<BaseMatcher<? super T>> mismatches = TreePVector.empty();
+	private final PVector<BaseMatcher<? super T>> matchers = TreePVector.empty();
 	
 	private CopyOfBaseMatcherCollector(final BaseMatcher<? super T> matcher) {
-		matchers = matchers.plus(matcher);
+		matchers.plus(matcher);
 	}
 
 	public boolean matches(Object itemToMatch) {
-		for (final BaseMatcher<? super T> matcher : matchers) {
-			if (!matcher.matches(itemToMatch)) {
-				mismatches = mismatches.plus(matcher); 
-			}
-	    }
-		return mismatches.isEmpty();
+		return matchers.equals(itemToMatch);
 	}
 
 	public void describeTo(Description description) {
@@ -39,7 +33,7 @@ public final class CopyOfBaseMatcherCollector<T> extends BaseMatcher<T> {
 	}
 	
 	public void describeMismatch(final Object item, final Description description) {
-		for (final BaseMatcher<? super T> mismatch : mismatches) {
+		for (final BaseMatcher<? super T> mismatch : matchers) {
 			description.appendText("\n")
 					   .appendDescriptionOf(mismatch).appendText(" BUT ");
 			mismatch.describeMismatch(item, description);
@@ -49,17 +43,16 @@ public final class CopyOfBaseMatcherCollector<T> extends BaseMatcher<T> {
 	/**
 	 * Adds your nth assertion to the chain.
 	 * @param matcher
-	 * @return the existing instance of BaseMatcherCollector
+	 * @return a new instance of BaseMatcherCollector
 	 */
 	public CopyOfBaseMatcherCollector<T> and(final BaseMatcher<? super T> matcher) {
-		matchers = matchers.plus(matcher);
-		return this;
+		return new CopyOfBaseMatcherCollector<T>(matcher);
 	}
 	
 	/**
 	 * Initiates your assertion chain.
 	 * @param matcher
-	 * @return an instance of BaseMatcherCollector Type {@code<T>} <br />
+	 * @return a new of BaseMatcherCollector Type {@code<T>} <br />
 	 */
 	public static <T> CopyOfBaseMatcherCollector<T> chain(final BaseMatcher<? super T> matcher) {
 	      return new CopyOfBaseMatcherCollector<T>(matcher);
