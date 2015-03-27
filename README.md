@@ -1,14 +1,22 @@
 # BaseMatcherCollector
-A generic solution for safe assertion chaining in Hamcrest.
-### Hamcrest
-A customisable [matcher](https://github.com/hamcrest) library.
+A generic solution for safe assertion chaining in Hamcrest. This [class](https://github.com/daafith/BaseMatcherCollector/blob/master/src/test/java/collector/BaseMatcherCollector.java) enables us to safely chain our BaseMatchers of type <T>. 
+The collector returns the results **after all** matchers have been executed.
 ```java
-	assertThat(foo.isBar(), is(true));
-	assertThat(bar.getFoo(), equalTo("foo"));
-	
-	//Output on failure: Expected: "foo"
-    //						  but: was "bar"
+	assertThat(foo, chain(
+				hasFooBar(true))
+				.and(hasBar("foo"))
+				.and(hasFoo(42)));
+		// Output on failure:
+		// Expected: 
+		// I wanted hasFooBar to return <true> 
+		// AND Foo should have been "foo" 
+		// AND hasFoo should return <42>
+		//	   but: 
+		// I wanted hasFooBar to return <true> BUT it returned <false>
+		// Foo should have been "foo" BUT instead it was "bar"
+		// hasFoo should return <42> BUT it returned <14>
 ```
+Of course you can tailor the output if you so desire. Then edit `describeTo` and/or `describeMismatch`.
 ### Custom BaseMatcher
 The BaseMatcher can be customised so that your matchers fit your context and it helps you define failure output once per BaseMatcher.
 ```java
@@ -39,22 +47,3 @@ The assertThat now looks like this.
 		//Output on failure: Expected: Foo should have been "foo"
 		//					 	  but:  instead it was "bar"
 ```
-### BaseMatcherCollector
-This [class](https://github.com/daafith/BaseMatcherCollector/blob/master/src/test/java/collector/BaseMatcherCollector.java) enables us to safely chain our BaseMatchers of type <T>. 
-The collector returns the results **after all** matchers have been executed.
-```java
-	assertThat(foo, chain(
-				hasFooBar(true))
-				.and(hasBar("foo"))
-				.and(hasFoo(42)));
-		// Output on failure:
-		// Expected: 
-		// I wanted hasFooBar to return <true> 
-		// AND Foo should have been "foo" 
-		// AND hasFoo should return <42>
-		//	   but: 
-		// I wanted hasFooBar to return <true> BUT it returned <false>
-		// Foo should have been "foo" BUT instead it was "bar"
-		// hasFoo should return <42> BUT it returned <14>
-```
-Of course you can tailor the output if you so desire. Then edit `describeTo` and/or `describeMismatch`.
