@@ -21,8 +21,8 @@ import custombasematchers.SpeedCameraMatchers;
  */
 public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 	
-	private List<BaseMatcher<? super T>> matchers = new ArrayList<BaseMatcher<? super T>>();
-	private List<BaseMatcher<? super T>> mismatches = new ArrayList<BaseMatcher<? super T>>();
+	private final List<BaseMatcher<? super T>> matchers = new ArrayList<BaseMatcher<? super T>>();
+	private final List<BaseMatcher<? super T>> mismatches = new ArrayList<BaseMatcher<? super T>>();
 	
 	private BaseMatcherCollector(final BaseMatcher<? super T> matcher) {
 		matchers.add(matcher);
