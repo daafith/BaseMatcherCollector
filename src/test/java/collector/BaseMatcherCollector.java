@@ -51,7 +51,7 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 	
 	/**
 	 * Adds your nth assertion to the chain.
-	 * @param matcher
+	 * @param matcher 
 	 * @return the existing instance of BaseMatcherCollector
 	 */
 	public BaseMatcherCollector<T> and(final BaseMatcher<? super T> matcher) {
