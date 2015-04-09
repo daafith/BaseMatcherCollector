@@ -69,6 +69,7 @@ public class AssertionChainingTestNgTest {
 		vehicle.passSpeedCamera(53);
 		assertThat(speedCamera, chain(
 						hasTakenAPicture(true))
+						.and(hasMeasuredSpeed(99))
 						.and(hasRevokedLicense(true))
 						.and(hasCorrectedSpeedTo(0)));
 	}

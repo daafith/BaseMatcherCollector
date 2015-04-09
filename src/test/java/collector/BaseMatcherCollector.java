@@ -41,6 +41,7 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 	      description.appendList("\n", "\n" + "AND" + " ", "", matchers);
 	}
 	
+	@Override
 	public void describeMismatch(final Object item, final Description description) {
 		for (final BaseMatcher<? super T> mismatch : mismatches) {
 			description.appendText("\n")
