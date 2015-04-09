@@ -1,5 +1,5 @@
 # BaseMatcherCollector
-A generic solution for safe assertion chaining in Hamcrest. This [class](https://github.com/daafith/BaseMatcherCollector/blob/master/src/test/java/collector/BaseMatcherCollector.java) enables us to safely chain our BaseMatchers of type `<T>`. 
+A generic solution for safe assertion chaining in Hamcrest. This [class](https://github.com/daafith/BaseMatcherCollector/blob/master/src/test/java/collector/BaseMatcherCollector.java) enables us to safely chain our BaseMatchers of type `? super <T>`. 
 The collector returns the results **after all** matchers have been executed.
 ```java
 	assertThat(foo, chain(
