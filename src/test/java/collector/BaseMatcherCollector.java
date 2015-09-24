@@ -28,7 +28,7 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 		matchers.add(matcher);
 	}
 
-	public boolean matches(Object itemToMatch) {
+	public boolean matches(final Object itemToMatch) {
 		for (final BaseMatcher<? super T> matcher : matchers) {
 			if (!matcher.matches(itemToMatch)) {
 				mismatches.add(matcher);  
@@ -37,7 +37,7 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 		return mismatches.isEmpty();
 	}
 
-	public void describeTo(Description description) {
+	public void describeTo(final Description description) {
 	      description.appendList("\n", "\n" + "AND" + " ", "", matchers);
 	}
 	
