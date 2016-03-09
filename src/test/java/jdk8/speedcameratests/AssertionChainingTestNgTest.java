@@ -1,6 +1,5 @@
-package speedcameratests;
+package jdk8.speedcameratests;
 
-import static collector.BaseMatcherCollector.chain;
 import static custombasematchers.MeasuringDeviceMatcher.isMeasuringDeviceTypeNamed;
 import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedTo;
 import static custombasematchers.SpeedCameraMatchers.hasCorrectedSpeedsInList;
@@ -9,6 +8,7 @@ import static custombasematchers.SpeedCameraMatchers.hasRevokedLicense;
 import static custombasematchers.SpeedCameraMatchers.hasTakenAPicture;
 import static custombasematchers.VehicleMatchers.hasBrand;
 import static custombasematchers.VehicleMatchers.hasCurrentSpeed;
+import static jdk8.BaseMatcherCollector.collect;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class AssertionChainingTestNgTest {
 	public void oneRingToRuleThemAll() {
 		expectedInList.add(49);
 		vehicle.passSpeedCamera(53);
-		assertThat(speedCamera, chain(
+		assertThat(speedCamera, collect(
 						hasMeasuredSpeed(53))
 						.and(hasCorrectedSpeedTo(49))
 						.and(hasCorrectedSpeedsInList(expectedInList))
@@ -51,7 +51,7 @@ public class AssertionChainingTestNgTest {
 
 	public void onlyTheFirstOneShallFail() {
 		vehicle.passSpeedCamera(53);
-		assertThat(speedCamera, chain(
+		assertThat(speedCamera, collect(
 						hasTakenAPicture(true))
 						.and(hasRevokedLicense(false))
 						.and(hasCorrectedSpeedTo(49)));
@@ -59,7 +59,7 @@ public class AssertionChainingTestNgTest {
 	
 	public void onlyTheFirstTwoShallFail() {
 		vehicle.passSpeedCamera(53);
-		assertThat(speedCamera, chain(
+		assertThat(speedCamera, collect(
 						hasTakenAPicture(true))
 						.and(hasRevokedLicense(true))
 						.and(hasCorrectedSpeedTo(49)));
@@ -67,7 +67,7 @@ public class AssertionChainingTestNgTest {
 
 	public void noneShallPass() {
 		vehicle.passSpeedCamera(53);
-		assertThat(speedCamera, chain(
+		assertThat(speedCamera, collect(
 						hasTakenAPicture(true))
 						.and(hasMeasuredSpeed(99))
 						.and(hasRevokedLicense(true))
@@ -77,7 +77,7 @@ public class AssertionChainingTestNgTest {
 	public void vehicleExample() {
 		vehicle.setBrand("Lotus");
 		vehicle.passSpeedCamera(53);
-		assertThat(vehicle, chain(
+		assertThat(vehicle, collect(
 						hasBrand("Lexus"))
 						.and(hasCurrentSpeed(199)));
 	}	

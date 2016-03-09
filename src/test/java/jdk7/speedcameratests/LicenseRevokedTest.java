@@ -1,4 +1,4 @@
-package speedcameratests;
+package jdk7.speedcameratests;
 
 import static custombasematchers.SpeedCameraMatchers.hasRevokedLicense;
 import static org.hamcrest.MatcherAssert.assertThat;

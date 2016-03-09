@@ -1,4 +1,4 @@
-package speedcameratests;
+package jdk8.speedcameratests;
 
 import static custombasematchers.SpeedCameraMatchers.hasTakenAPicture;
 import static org.hamcrest.MatcherAssert.assertThat;

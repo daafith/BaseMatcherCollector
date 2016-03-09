@@ -1,4 +1,4 @@
-package collector;
+package jdk7;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 
-import speedcameratests.AssertionChainingJUnitTest;
-import speedcameratests.AssertionChainingTestNgTest;
 import custombasematchers.SpeedCameraMatchers;
+import jdk7.speedcameratests.AssertionChainingJUnitTest;
+import jdk7.speedcameratests.AssertionChainingTestNgTest;
 
 /**
  * 
@@ -65,7 +65,7 @@ public class BaseMatcherCollector<T> extends BaseMatcher<T> {
 	 * @param matcher
 	 * @return an instance of BaseMatcherCollector Type {@code<T>} <br />
 	 */
-	public static <T> BaseMatcherCollector<T> chain(final BaseMatcher<? super T> matcher) {
+	public static <T> BaseMatcherCollector<T> collect(final BaseMatcher<? super T> matcher) {
 	      return new BaseMatcherCollector<T>(matcher);
 	}
 

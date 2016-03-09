@@ -14,12 +14,12 @@ public class SpeedCameraMatchers {
 		return new TypeSafeMatcher<SpeedCamera>() {
 		      
 			public void describeTo(final Description description) {
-				description.appendText("The camera should have corrected the speed to ")
+				description.appendText("The camera should have measured speed ")
 						   .appendValue(measuredSpeed);
 		    }
 		      
 		    public void describeMismatchSafely(final SpeedCamera camera, final Description mismatchDescription) {
-		    	mismatchDescription.appendText(" alas, the camera corrected it to ")
+		    	mismatchDescription.appendText(" alas, the camera measured ")
 		    					   .appendValue(camera.getMeasuredSpeed());
 			}
 		      
