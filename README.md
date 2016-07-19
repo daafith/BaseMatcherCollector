@@ -9,11 +9,11 @@ The collector returns the results **after all** matchers have been executed.
 		// Output on failure:
 		// Expected: 
 		// I wanted hasFooBar to return <true> 
-		// AND Foo should have been "foo" 
+		// AND hasBar should have been "foo" 
 		// AND hasFoo should return <42>
 		//	   but: 
 		// I wanted hasFooBar to return <true> BUT it returned <false>
-		// Foo should have been "foo" BUT instead it was "bar"
+		// hasBar should have been "foo" BUT instead it was "bar"
 		// hasFoo should return <42> BUT it returned <14>
 ```
 Of course you can tailor the output if you so desire. Then edit `describeTo` and/or `describeMismatch`.
