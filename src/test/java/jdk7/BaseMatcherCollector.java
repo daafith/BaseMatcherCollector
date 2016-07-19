@@ -7,16 +7,16 @@ import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 
 import custombasematchers.SpeedCameraMatchers;
-import jdk7.speedcameratests.AssertionChainingJUnitTest;
-import jdk7.speedcameratests.AssertionChainingTestNgTest;
+import jdk7.speedcameratests.SoftAssertionsJUnitTest;
+import jdk7.speedcameratests.SoftAssertionsTestNgTest;
 
 /**
  * 
  * @author David Baak, Copyright March 2015 <br />
  * This BaseMatcherCollector enables you to chain custom {@link BaseMatcher} of type <T> with {@code chain} and {@code and}.<br />
  * An example of a custom {@link BaseMatcher} is: {@link SpeedCameraMatchers}<br />
- * An example of chaining in Junit is: {@link AssertionChainingJUnitTest}<br />
- * An example of chaining in TestNg is: {@link AssertionChainingTestNgTest}<br />
+ * An example of chaining in Junit is: {@link SoftAssertionsJUnitTest}<br />
+ * An example of chaining in TestNg is: {@link SoftAssertionsTestNgTest}<br />
  * @param <T>
  */
 public class BaseMatcherCollector<T> extends BaseMatcher<T> {

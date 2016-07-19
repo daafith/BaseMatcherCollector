@@ -22,7 +22,7 @@ import speedcamera.Vehicle;
 /**
  * These are a few examples of safe assertion chaining in JUnit
  */
-public class AssertionChainingJUnitTest {
+public class SoftAssertionsJUnitTest {
 	
 	private Vehicle vehicle;
 	private SpeedCamera speedCamera;

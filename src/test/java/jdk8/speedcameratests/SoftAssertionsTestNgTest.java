@@ -24,7 +24,7 @@ import speedcamera.Vehicle;
  * These are a few examples of safe assertion chaining in TestNG
  */
 @Test
-public class AssertionChainingTestNgTest {
+public class SoftAssertionsTestNgTest {
 	
 	private Vehicle vehicle;
 	private SpeedCamera speedCamera;
